@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+             xmlns:local="clr-namespace:TelerikDataGridDemo.ViewModels"
+             x:DataType="local:PersonViewModel"
+             x:Class="TelerikDataGridDemo.MainPage">
+
+    <Grid RowDefinitions="80,*"
+          Padding="40"
+          Margin="20">
+        <telerik:RadButton Text="Programmatic Selection"
+                           WidthRequest="320"
+                           HeightRequest="80"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center"
+                           x:Name="SelectButton"
+                           BackgroundColor="AntiqueWhite"
+                           Clicked="RadButton_Clicked"/>
+        <telerik:RadDataGrid x:Name="dataGrid"
+                             Grid.Row="1"
+                             ItemsSource="{Binding PersonCollection }"
+                             SelectionUnit="Row"
+                             SelectionMode="Single"
+                             SelectionChanged="dataGrid_SelectionChanged"/>
+    </Grid>
+
+</ContentPage>
